@@ -16,6 +16,9 @@ body {
     background-size: cover;
     background-position: center;
 }
+h2{
+    color: #7a2618;;
+}
 
 
 .Box-login {
@@ -34,6 +37,7 @@ body {
 }
 
 .logo img {
+    border-radius: 5%;
     width: 150px;
     margin: 10px 0 20px;
 }
@@ -77,7 +81,7 @@ body {
 }
 
 .Box-login input:focus {
-    border-color: purple;
+    border-color: rgb(163, 161, 157);
     background: #ffffff;
 }
 
@@ -88,7 +92,7 @@ body {
     font-size: 17px;
     border: none;
     border-radius: 12px;
-    background: white;
+    background: rgb(189, 188, 188);
     color: black;
     cursor: pointer;
     font-weight: 600;
@@ -122,6 +126,20 @@ body {
     gap: 16px;
     margin-top: 20px;
 }
+.otherlogin {
+    text-align: center;
+    margin: 20px 0 12px;
+    color: #7a2618;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: small;
+    opacity: 50%;
+    
+}
+
+
+
 
 .social button {
     width: 42px;

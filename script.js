@@ -19,32 +19,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
     togglePassword("password1", "eye1");
     togglePassword("password2", "eye2"); // chỉ Register có
+})
+//======== thay màu ==============
+function activeButton(inputIds, btnSelector) {
+    const btn = document.querySelector(btnSelector);
+    if (!btn) return;
 
-    // Đổi màu nút khi nhập bất kỳ ô nào
-    function activeButton(inputIds, btnSelector) {
-        const btn = document.querySelector(btnSelector);
-        if (!btn) return;
-
-        function check() {
-            const filled = inputIds.some(id => {
-                const el = document.getElementById(id);
-                return el && el.value.trim() !== "";
-            });
-
-            if (filled) btn.classList.add("active");
-            else btn.classList.remove("active");
-        }
-
-        inputIds.forEach(id => {
+    function check() {
+        const allFilled = inputIds.every(id => {
             const el = document.getElementById(id);
-            if (el) el.addEventListener("input", check);
+            return el && el.value.trim() !== "";
         });
+
+        btn.classList.toggle("active", allFilled);
     }
 
-    // Login
-    activeButton(["user", "password1"], ".Buttons");
+    inputIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener("input", check);
+    });
 
-    // Register
-    activeButton(["user", "password1", "password2"], ".Buttons");
+    check(); // Kiểm tra khi load trang
+}
 
-});
+if (document.getElementById("login-btn")) {
+    activeButton(["user", "password1"], "#login-btn");
+}
+
+if (document.getElementById("register-btn")) {
+    activeButton(["user", "password1", "password2"], "#register-btn");
+}
+ 
