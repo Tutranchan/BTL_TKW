@@ -1,0 +1,24 @@
+body { font-family: 'PT Serif', serif; }
+
+/* CẤU HÌNH MÀU THEME */
+/* Gold: #d4af37 (chính)
+    Brick Red: #c2412d (điểm nhấn)
+    Dark BG: #0a0303, #140805
+*/
+
+/* Chấm bi màu Gold mờ */
+.bg-dots {
+    background-image: radial-gradient(#d4af3733 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+/* Thanh cuộn */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #140805; }
+::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #e8c76d; }
+
+::selection {
+    background-color: #c2412d;
+    color: #e8c76d;
+}

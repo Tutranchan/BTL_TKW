@@ -1,0 +1,98 @@
+/* --- CẤU HÌNH GỐC --- */
+:root {
+    --color-bg: #0a0303;
+    --color-paper: #d4bd9e;
+    --color-ink: #402d16;
+    --color-gold: #d4af37;
+    --color-red: #c2412d;
+    --color-text-light: #f3f1e6;
+}
+
+body { 
+    font-family: 'PT Serif', serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-light);
+    font-size: 18px;
+    overflow-x: hidden; /* Tránh thanh cuộn ngang do hiệu ứng */
+}
+
+h1, h2, h3, h4, .fantasy-font { font-family: 'PT Serif', serif; font-weight: 700; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #140805; }
+::-webkit-scrollbar-thumb { background: #2b120a; border: 1px solid var(--color-gold); border-radius: 4px; }
+.drop-cap::first-letter { float: left; font-family: 'PT Serif', serif; font-size: 3.5rem; line-height: 0.8; font-weight: bold; color: var(--color-gold); margin-right: 0.5rem; text-shadow: 2px 2px 0px var(--color-red); }
+.divider-ornament { display: flex; align-items: center; justify-content: center; margin: 3rem 0; color: var(--color-red); font-size: 1.5rem; font-family: 'PT Serif', serif; font-weight: bold; }
+.divider-ornament::before, .divider-ornament::after { content: ""; height: 1px; background: linear-gradient(90deg, transparent, var(--color-gold), transparent); flex: 1; margin: 0 1rem; }
+.medieval-border { border: 4px double var(--color-gold); box-shadow: inset 0 0 30px rgba(0,0,0,0.8); background: rgba(20, 8, 5, 0.8); }
+
+/* Card giấy da */
+.parchment-card {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    border: 1px solid var(--color-gold);
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hiệu ứng nảy nhẹ */
+}
+.parchment-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2); /* Glow vàng khi hover */
+    border-color: var(--color-red);
+    z-index: 10;
+}
+
+::selection { background-color: var(--color-red); color: var(--color-paper); }
+
+/* --- CÁC HIỆU ỨNG MỚI (FX) --- */
+
+/* 1. Torch Light (Đèn pin soi sáng) */
+#torch-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; /* Không chặn click chuột */
+    z-index: 1;
+    background: radial-gradient(
+        circle 600px at var(--x, 50%) var(--y, 50%), 
+        rgba(212, 175, 55, 0.08) 0%, 
+        transparent 50%
+    );
+    mix-blend-mode: screen; /* Hòa trộn ánh sáng */
+}
+
+/* 2. bụi*/
+.particle {
+    position: fixed;
+    background: var(--color-gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    20% { opacity: 0.6; }
+    80% { opacity: 0.4; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/* 3. Scroll Reveal (Hiệu ứng hiện ra khi cuộn) */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Active link indicator cho Sidebar */
+.nav-link.active {
+    color: var(--color-gold);
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 2px solid var(--color-red);
+}
+.nav-link { transition: all 0.3s ease; }
