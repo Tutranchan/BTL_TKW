@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Lỗi - Fearero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style_pgs.css">
+    
+    <link rel="stylesheet" href = "css/report.css">
+    
+</head>
+
+<body class="antialiased relative">
+
+    <div id="torch-overlay"></div>
+    <div id="particles-container"></div>
+
+    <header class="bg-[#140805]/95 backdrop-blur-sm border-b border-[#d4af37]/30 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold text-xl text-[#d4af37] tracking-wider" style="font-family: 'Rajdhani', sans-serif;">FEAREO SUPPORT</span>
+            <a href="index.html" class="text-sm font-bold text-[#c2412d] hover:text-[#d4af37] transition uppercase tracking-widest">
+                ← Quay lại Game
+            </a>
+        </div>
+    </header>
+
+    <div class="max-w-3xl mx-auto px-4 py-16 relative z-10">
+        
+        <div class="text-center mb-10 reveal-on-scroll">
+            <p class="text-[#c2412d] uppercase tracking-[0.3em] text-sm mb-2 font-bold">Hệ thống hỗ trợ</p>
+            <h1 class="text-4xl md:text-5xl font-black text-[#f3f1e6] mb-4 drop-shadow-lg uppercase">
+                Báo cáo <span class="text-[#d4af37]">Sự cố</span>
+            </h1>
+            <p class="text-[#a68b7c] italic">"Phát hiện lỗi là bước đầu tiên của sự hoàn hảo"</p>
+        </div>
+
+        <div class="mb-10 text-center space-y-4 reveal-on-scroll">
+            <div class="inline-block border-b-2 border-[#c2412d] pb-1">
+                <h3 class="text-[#c2412d] font-bold uppercase tracking-widest text-lg">⚠️ Cáo thị quan trọng</h3>
+            </div>
+            
+            <div class="text-[#a68b7c] text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                <p class="mb-2">Trước khi gửi báo lỗi, xin các hiệp sĩ lưu ý:</p>
+                <ul class="list-none space-y-2">
+                    <li>
+                        <span class="text-[#d4af37]">✦</span> Ban quản trị <strong class="text-[#f3f1e6]">KHÔNG BAO GIỜ</strong> hỏi mật khẩu của bạn dưới bất kỳ hình thức nào.
+                    </li>
+                    <li>
+                        <span class="text-[#d4af37]">✦</span> Các báo cáo spam hoặc dùng từ ngữ khiếm nhã sẽ bị <strong class="text-[#c2412d]">khóa tài khoản</strong> vĩnh viễn.
+                    </li>
+                    <li>
+                        <span class="text-[#d4af37]">✦</span> Nếu cần hỗ trợ khẩn cấp, vui lòng liên hệ qua Discord thay vì gửi form.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="parchment-card rounded-lg p-8 reveal-on-scroll">
+
+            <div class="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#c2412d]"></div>
+            <div class="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-[#c2412d]"></div>
+            <div class="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-[#c2412d]"></div>
+            <div class="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#c2412d]"></div>
+
+            <form id="bugReportForm" class="space-y-6 relative z-10">
+                
+                <div>
+                    <label class="block text-[#402d16] font-bold mb-2 uppercase text-sm tracking-wide">Loại vấn đề</label>
+                    <select id="bugType" class="input-medieval rounded">
+                        <option value="bug_gameplay">Lỗi Gameplay / Kẹt map</option>
+                        <option value="bug_graphic">Lỗi Hiển thị / Đồ họa</option>
+                        <option value="bug_account">Lỗi Tài khoản / Đăng nhập</option>
+                        <option value="bug_payment">Lỗi Nạp thẻ / Thanh toán</option>
+                        <option value="suggestion">Góp ý tính năng</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[#402d16] font-bold mb-2 uppercase text-sm tracking-wide">Tiêu đề ngắn gọn</label>
+                    <input type="text" id="bugTitle" required class="input-medieval rounded" placeholder="Ví dụ: Gacha full bảo hiểm liên tục...">
+                </div>
+
+                <div>
+                    <label class="block text-[#402d16] font-bold mb-2 uppercase text-sm tracking-wide">Mô tả chi tiết</label>
+                    <textarea id="bugDesc" rows="5" required class="input-medieval rounded" placeholder="Mô tả các bước để tái hiện lỗi..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full btn-submit py-4 rounded shadow-lg text-lg flex justify-center items-center gap-2 group">
+                    <span>Gửi báo cáo</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+
+            </form>
+        </div>
+
+        <div id="successMessage" class="hidden mt-6 bg-[#140805] border border-[#d4af37] p-6 rounded text-center">
+            <p class="text-[#d4af37] text-xl font-bold mb-2">ĐÃ GỬI THÀNH CÔNG!</p>
+            <p class="text-[#a68b7c]">Cảm ơn vì đã giúp chúng tôi cải thiện thế giới này.</p>
+            <button onclick="window.location.reload()" class="mt-4 text-[#c2412d] hover:text-[#f3f1e6] underline">Gửi báo cáo khác</button>
+        </div>
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script type="module" src = "js/report.js"></script>
+
+    <script src="js/effect.js"></script>
+</body>
+</html>

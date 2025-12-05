@@ -7,107 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- CẤU HÌNH GỐC --- */
-        :root {
-            --color-bg: #0a0303;
-            --color-paper: #d4bd9e;
-            --color-ink: #402d16;
-            --color-gold: #d4af37;
-            --color-red: #c2412d;
-            --color-text-light: #f3f1e6;
-        }
-
-        body { 
-            font-family: 'PT Serif', serif;
-            background-color: var(--color-bg);
-            color: var(--color-text-light);
-            font-size: 18px;
-            overflow-x: hidden; /* Tránh thanh cuộn ngang do hiệu ứng */
-        }
-        
-        h1, h2, h3, h4, .fantasy-font { font-family: 'PT Serif', serif; font-weight: 700; }
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #140805; }
-        ::-webkit-scrollbar-thumb { background: #2b120a; border: 1px solid var(--color-gold); border-radius: 4px; }
-        .drop-cap::first-letter { float: left; font-family: 'PT Serif', serif; font-size: 3.5rem; line-height: 0.8; font-weight: bold; color: var(--color-gold); margin-right: 0.5rem; text-shadow: 2px 2px 0px var(--color-red); }
-        .divider-ornament { display: flex; align-items: center; justify-content: center; margin: 3rem 0; color: var(--color-red); font-size: 1.5rem; font-family: 'PT Serif', serif; font-weight: bold; }
-        .divider-ornament::before, .divider-ornament::after { content: ""; height: 1px; background: linear-gradient(90deg, transparent, var(--color-gold), transparent); flex: 1; margin: 0 1rem; }
-        .medieval-border { border: 4px double var(--color-gold); box-shadow: inset 0 0 30px rgba(0,0,0,0.8); background: rgba(20, 8, 5, 0.8); }
-        
-        /* Card giấy da */
-        .parchment-card {
-            background-color: var(--color-paper);
-            color: var(--color-ink);
-            border: 1px solid var(--color-gold);
-            padding: 1.5rem;
-            position: relative;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hiệu ứng nảy nhẹ */
-        }
-        .parchment-card:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2); /* Glow vàng khi hover */
-            border-color: var(--color-red);
-            z-index: 10;
-        }
-
-        ::selection { background-color: var(--color-red); color: var(--color-paper); }
-
-        /* --- CÁC HIỆU ỨNG MỚI (FX) --- */
-
-        /* 1. Torch Light (Đèn pin soi sáng) */
-        #torch-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; /* Không chặn click chuột */
-            z-index: 1;
-            background: radial-gradient(
-                circle 600px at var(--x, 50%) var(--y, 50%), 
-                rgba(212, 175, 55, 0.08) 0%, 
-                transparent 50%
-            );
-            mix-blend-mode: screen; /* Hòa trộn ánh sáng */
-        }
-
-        /* 2. Particles (Bụi ma thuật) */
-        .particle {
-            position: fixed;
-            background: var(--color-gold);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0;
-            animation: floatUp linear infinite;
-        }
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) scale(0); opacity: 0; }
-            20% { opacity: 0.6; }
-            80% { opacity: 0.4; }
-            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
-        }
-
-        /* 3. Scroll Reveal (Hiệu ứng hiện ra khi cuộn) */
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal-on-scroll.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Active link indicator cho Sidebar */
-        .nav-link.active {
-            color: var(--color-gold);
-            font-weight: bold;
-            padding-left: 10px;
-            border-left: 2px solid var(--color-red);
-        }
-        .nav-link { transition: all 0.3s ease; }
-
-    </style>
+    <link rel="stylesheet" href = "css/style_pgs.css">
 </head>
 
 <body class="antialiased relative">
@@ -175,42 +75,81 @@
             <main class="col-span-1 lg:col-span-3 space-y-16">
                 
                 <section id="definition" class="scroll-mt-28 reveal-on-scroll">
-                    <div class="divider-ornament">I</div>
-                    <h2 class="text-3xl text-center text-[#f3f1e6] mb-8 font-bold uppercase tracking-wide">Định nghĩa</h2>
-                    <div class="space-y-6">
-                        <div class="parchment-card rounded-lg">
-                            <h4 class="text-[#c2412d] text-lg mb-2 uppercase tracking-wide font-bold border-b border-[#c2412d]/30">1.1. “Trò chơi điện tử” hoặc “game”</h4>
-                            <p class="text-[#402d16] leading-7 text-justify">
-                                Được hiểu là trò chơi điện tử có thể được cung cấp trực tuyến (online) hoặc không trực tuyến (offline). Trò chơi điện tử có thể được cung cấp bởi <span class="font-bold">Fearero studio</span>,
-                                 hoặc bởi các Đối tác của chúng tôi thông qua kênh phân phối/cung cấp của chúng tôi.
-                            </p>
+                    <div class="divider-ornament" style="margin-top: 0;">I</div>
+                    <h2 class="text-3xl text-center text-[#f3f1e6] mb-8 font-bold uppercase tracking-wide">
+                        Định nghĩa
+                    </h2>
+                    
+                    <p class="text-center text-[#a68b7c] italic mb-8">
+                        Các từ ngữ dưới đây được hiểu như sau trong văn bản này:
+                    </p>
+
+                    <div class="space-y-8">
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            
+                            <div class="parchment-card rounded-lg flex flex-col relative overflow-hidden group">
+                                <div class="absolute inset-0 bg-[#c2412d]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg pointer-events-none"></div>
+                                
+                                <div class="relative z-10 space-y-6">
+                                    <div>
+                                        <h3 class="text-[#402d16] text-lg mb-2 font-bold uppercase border-b border-[#c2412d]/20 pb-1 inline-block">
+                                            1.1. Trò chơi điện tử (Game)
+                                        </h3>
+                                        <p class="text-[#402d16] text-sm text-justify">
+                                            Là trò chơi online hoặc offline được cung cấp bởi <strong class="text-[#c2412d]">FeareoVN</strong> hoặc các Đối tác phân phối.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-[#402d16] text-lg mb-2 font-bold uppercase border-b border-[#c2412d]/20 pb-1 inline-block">
+                                            1.2. Dịch vụ
+                                        </h3>
+                                        <p class="text-[#402d16] text-sm text-justify">
+                                            Bao gồm dịch vụ game, hỗ trợ thanh toán và các dịch vụ liên quan để người dùng truy cập/tải/sử dụng game.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="parchment-card rounded-lg flex flex-col relative overflow-hidden group">
+                                <div class="absolute inset-0 bg-[#c2412d]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg pointer-events-none"></div>
+
+                                <div class="relative z-10 space-y-6">
+                                    <div>
+                                        <h3 class="text-[#402d16] text-lg mb-2 font-bold uppercase border-b border-[#c2412d]/20 pb-1 inline-block">
+                                            1.3. Website
+                                        </h3>
+                                        <p class="text-[#402d16] text-sm text-justify">
+                                            Là trang <a href="https://feareo.vn/" class="font-bold underline decoration-[#c2412d]">https://feareo.vn/</a> và các trang thông tin khác do Công ty vận hành.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-[#402d16] text-lg mb-2 font-bold uppercase border-b border-[#c2412d]/20 pb-1 inline-block">
+                                            1.4. Đối tác
+                                        </h3>
+                                        <p class="text-[#402d16] text-sm text-justify">
+                                            Là các thể nhân hoặc pháp nhân hợp tác với FeareoVN để cung cấp Dịch vụ/Nội dung.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="parchment-card rounded-lg">
-                            <h4 class="text-[#c2412d] text-lg mb-2 uppercase tracking-wide font-bold border-b border-[#c2412d]/30">1.2. “Dịch vụ”</h4>
-                            <p class="text-[#402d16] leading-7 text-justify">
-                                “Dịch vụ” được hiểu là dịch vụ trò chơi điện tử và các dịch vụ khác bao gồm trong đó, có hoặc được cung cấp kèm theo, hoặc các dịch vụ khác có liên quan tới việc cung cấp, khai thác, sử dụng dịch vụ trò chơi điện tử mà thông qua đó người dùng có thể truy cập, tải về, và sử dụng được game theo nhưng mong muốn. Dịch vụ bao gồm nhưng không giới hạn tới Dịch vụ game, Dịch vụ hỗ trợ thanh toán,…
-                            </p>
+
+                        <div class="bg-[#140805] border border-[#d4af37]/40 p-6 rounded-lg shadow-lg relative overflow-hidden group">
+
+                            <div class="grid md:grid-cols-2 gap-8 relative z-10">
+                                <div>
+                                    <h3 class="text-[#d4af37] text-lg mb-3 font-bold uppercase border-b border-[#d4af37]/20 pb-2">
+                                        1.5. Tài khoản (FeareoID)
+                                    </h3>
+                                    <p class="text-[#f3f1e6] text-sm leading-relaxed text-justify">
+                                        Là tập hợp chuỗi ký tự định danh người dùng duy nhất. Định danh thiết lập bởi các công ty dựa trên ứng dụng gọi là <strong class="text-[#d4af37]">"ID Người Dùng"</strong>.
+                                    </p>
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="parchment-card rounded-lg">
-                            <h4 class="text-[#c2412d] text-lg mb-2 uppercase tracking-wide font-bold border-b border-[#c2412d]/30">1.3. “Website”</h4>
-                            <p class="text-[#402d16] leading-7 text-justify">
-                                “website” được hiểu là trang thông tin điện tử có địa chỉ <span class="font-bold underline decoration-[#c2412d]">https://rebornfromthedepht.vn/</span>
-                                 và các trang thông tin điện tử khác được sử dụng bởi Công ty để duy trì, cung cấp, vận hành dịch vụ, hoặc có liên quan tới việc cung cấp Dịch vụ.
-                            </p>
-                        </div>
-                         <div class="parchment-card rounded-lg">
-                            <h4 class="text-[#c2412d] text-lg mb-2 uppercase tracking-wide font-bold border-b border-[#c2412d]/30">1.4. “Đối tác”</h4>
-                            <p class="text-[#402d16] leading-7 text-justify">
-                                “Đối tác” được hiểu là các đối tác, có thể là thể nhân hoặc pháp nhân mà có hợp tác với <span class="font-bold">Fearero studio</span> trong việc cung cấp Dịch vụ, Nội dung,…
-                            </p>
-                        </div>
-                         <div class="parchment-card rounded-lg">
-                            <h4 class="text-[#c2412d] text-lg mb-2 uppercase tracking-wide font-bold border-b border-[#c2412d]/30">1.5. “Tài khoản”</h4>
-                            <p class="text-[#402d16] leading-7 text-justify">
-                                <span class="font-bold">"Tài khoản"</span>, hoặc <span class="font-bold">"FeareroID"</span> có nghĩa là một tập hợp các chuỗi ký tự hoặc bất kỳ các dấu khác mà phát hành bởi Công ty
-                                 tại thời điểm bắt đầu việc sử dụng Dịch vụ để định danh một người dùng duy nhất. Trong số đó, định danh (các định danh) được thiết lập bởi các công ty dựa trên ứng dụng của người dùng được gọi là “ID Người Dùng”.
-                            </p>
-                        </div>
+
                     </div>
                 </section>
 
@@ -367,80 +306,6 @@
 
     <div id="footer-placeholder"></div>
 
-    <script>
-        // 1. TORCH EFFECT: Đèn pin theo chuột
-        const torch = document.getElementById('torch-overlay');
-        document.addEventListener('mousemove', (e) => {
-            torch.style.setProperty('--x', e.clientX + 'px');
-            torch.style.setProperty('--y', e.clientY + 'px');
-        });
-
-        // 2. PARTICLES: Tạo hạt bụi
-        const particleContainer = document.getElementById('particles-container');
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            // Random kích thước và vị trí
-            const size = Math.random() * 4 + 2; //
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            particle.style.left = Math.random() * 100 + 'vw';
-            
-            // Random thời gian bay
-            particle.style.animationDuration = Math.random() * 5 + 5 + 's'; // 5s - 10s
-            
-            particleContainer.appendChild(particle);
-
-            // Xóa hạt sau khi bay xong để nhẹ trình duyệt
-            setTimeout(() => {
-                particle.remove();
-            }, 10000);
-        }
-        setInterval(createParticle, 300); // Tạo hạt mỗi 300ms
-
-        // 3. SCROLL REVEAL & ACTIVE LINK
-        const reveals = document.querySelectorAll('.reveal-on-scroll');
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        function checkScroll() {
-            const triggerBottom = window.innerHeight * 0.85;
-
-            // Hiệu ứng hiện ra
-            reveals.forEach(reveal => {
-                const boxTop = reveal.getBoundingClientRect().top;
-                if(boxTop < triggerBottom) {
-                    reveal.classList.add('active');
-                }
-            });
-
-            // Highlight Sidebar link
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 300)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', checkScroll);
-        // Gọi 1 lần đầu để hiện các phần tử đang thấy
-        checkScroll();
-
-        // Footer loader
-        fetch('footer.html')
-            .then(r => r.ok ? r.text() : '')
-            .then(d => document.getElementById('footer-placeholder').innerHTML = d);
-    </script>
+    <script src="js/effect.js"></script>
 </body>
 </html>
