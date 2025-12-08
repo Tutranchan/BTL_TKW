@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reborn from the depths - Fearero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@400;600;800;900&family=Teko:wght@600&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-wrap">
+            <img src="icon/logo.png" alt="Fearero" class="logo-img">
+            <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li> <li><a href="#" class="active" onclick="window.scrollTo(0,0); return false;">Character</a></li>
+                
+                <li><a href="#">Event & news</a></li>
+                <li><a href="#">Information</a></li>
+            </ul>
+            <a href="#" class="btn-dl">Download now</a>
+        </div>
+    </header>
+
+    <section class="hero-story-section" id="intro">
+        <div class="container">
+            <h1 class="hero-title reveal" style="color: var(--accent); font-size: 5rem; text-shadow: 0 0 40px rgba(247, 192, 74, 0.6);">
+                REBORN FROM<br>THE DEPTHS
+            </h1>
+            
+            <span class="hero-slogan" style="color: #fff; opacity: 0.8; font-size: 1.1rem;">
+            </span>
+
+            <div class="story-content-clean reveal" style="max-width: 900px; margin: 60px auto 0; text-align: left; position: relative;">
+                
+                <h3 style="color: var(--accent); font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 20px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px;">
+                    CỐT TRUYỆN
+                </h3>
+
+                <p style="color: #e0e0e0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; text-shadow: 1px 1px 2px #000;">
+                    Lấy bối cảnh 5000 năm sau cuộc đại chiến Orthis. Bạn đóng vai một thiếu niên 17 tuổi muốn trở thành một nhà khảo cổ, đang bắt đầu trên con đường du hành của mình để khám phá về thế giới, mang trong mình đầy hoài bão cùng với giấc mơ của người cha đã mất của mình. Bạn bắt đầu viết tiếp những chương mới trong trang sách đã sờn của ông.                
+                </p>
+
+                <div style="text-align: right; margin-top: 30px;">
+                    <div class="btn-trailer" onclick="openVideo()" style="display: inline-flex; background: var(--primary); border: 1px solid var(--accent);">
+                        <i class="fas fa-play-circle"></i> XEM TRAILER
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="gameplay-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>GAMEPLAY & FEATURES</h2>
+            </div>
+            
+            <p class="gameplay-desc reveal">
+                Thể loại: <strong>Turn-base Card Battle</strong> (Chiến thuật thẻ bài). <br>
+                Trải nghiệm những trận đấu trí căng thẳng và khám phá thế giới Urban Fantasy đầy màu sắc.
+            </p>
+
+            <div class="gameplay-list reveal">
+                <div class="gp-item">
+                    <i class="fas fa-chess-rook"></i>
+                    <h4>Chiến Thuật</h4>
+                    <p>Xây dựng đội hình tối ưu, tính toán từng nước đi để giành chiến thắng.</p>
+                </div>
+                <div class="gp-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <h4>Phiêu Bạt</h4>
+                    <p>Khám phá những vùng đất mới, giải mã bí ẩn của thế giới Urban Fantasy.</p>
+                </div>
+                <div class="gp-item">
+                    <i class="fas fa-users"></i>
+                    <h4>Đa Phe Phái</h4>
+                    <p>Tương tác với nhiều thế lực khác nhau, mỗi phe phái mang đến câu chuyện riêng.</p>
+                </div>
+                <div class="gp-item">
+                    <i class="fas fa-music"></i>
+                    <h4>Âm Thanh</h4>
+                    <p>Đắm chìm trong không gian âm nhạc sống động và hiệu ứng chân thực.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="characters">
+        
+        <div class="decor-left-stripe-bg"></div>
+        <div class="decor-badge-top" id="badge-top">
+            <div class="decor-badge-content">
+                <span class="decor-title">Giới Thiệu<br>Nhân Vật</span>
+                <span class="decor-subtitle">CHARACTERS</span>
+                <span class="decor-number" id="char-number">01</span>
+            </div>
+        </div>
+        <div class="decor-right-solid-bg"></div>
+
+        <div class="container reveal">
+            <div class="char-display">
+                <img id="big-char-img" src="character/alius.png" alt="Character" class="big-img">
+            </div>
+
+            <div class="char-details">
+                <h2 id="char-name" class="char-name">Alius</h2>
+                
+                <div class="char-element-wrap">
+                    <span id="char-badge" class="element-badge">Quang thức</span>
+                </div>
+
+                <div id="char-quote" class="char-quote">
+                    "Tôi không biết? Tôi không nhớ? Tôi không hiểu? Tôi là ai?"
+                </div>
+                
+                <p class="char-desc" id="char-desc">
+                    Sở hữu sức mạnh của Ánh sáng và Trí thức. Alius luôn tìm kiếm câu trả lời cho nguồn gốc của mình giữa thế giới hỗn mang.
+                </p>
+            </div>
+
+            <div class="char-selector">
+                <div class="nav-arrow up" onclick="navigateUp()">
+                    <img src="icon/arrow_up.svg" alt="Lên">
+                </div>
+                
+                <div id="thumb-list" style="display: flex; flex-direction: column; gap: 15px;">
+                    </div>
+                
+                <div class="nav-arrow down" onclick="navigateDown()">
+                    <img src="icon/arrow_down.svg" alt="Xuống">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-new">
+        <div class="footer-dots"></div>
+        <div class="footer-glow"></div>
+        <div class="footer-line"></div>
+
+        <div class="footer-content">
+            <div class="footer-grid">
+                
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <a href="#" class="group" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                        <div class="footer-logo-box">
+                            <svg style="width: 24px; height: 24px; color: #d4af37;" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                        </div>
+                        <span class="footer-logo-text">Fearero studio</span>
+                    </a>
+                    <p style="font-size: 0.875rem; text-align: justify; line-height: 1.6;">
+                        Game studio số 1 Việt Nam (tin juan).
+                    </p>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="#" class="footer-social-btn"><i class=" fab fa-facebook"></i></a>
+                        <a href="#" class="footer-social-btn"><i class=" fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-btn"><i class=" fab fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Khám phá</h3>
+                    <a href="#" class="footer-link">Trang chủ</a>
+                    <a href="#" class="footer-link">Khảo cổ sư</a>
+                    <a href="#" class="footer-link">Bảng xếp hạng</a>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading" style="border-color: #7a2618;">Hỗ trợ</h3>
+                    <a href="#" class="footer-link">Báo lỗi</a>
+                    <a href="#" class="footer-link">Nạp thẻ</a>
+                    <a href="#" class="footer-link" style="color: #c2412d; font-weight: bold; display: flex; align-items: center;">
+                        Chính sách <span style="width: 6px; height: 6px; background: #c2412d; border-radius: 50%; margin-left: 8px;"></span>
+                    </a>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Tải Game</h3>
+                    <button class="btn-footer-dl">
+                        <i class="fas fa-download"></i> DOWNLOAD PC
+                    </button>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                        <button style="background: #0a0303; border: 1px solid #5d2e1e; color: #a68b7c; padding: 8px; border-radius: 4px; font-size: 10px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                            <i class="fab fa-apple"></i> APP STORE
+                        </button>
+                        <button style="background: #0a0303; border: 1px solid #5d2e1e; color: #a68b7c; padding: 8px; border-radius: 4px; font-size: 10px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                            <i class="fab fa-google-play"></i> PLAY STORE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>Copyright &copy; 2025 Fearero studio</p>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <a href="#" style="text-decoration: none; color: inherit;">PRIVACY</a>
+                    <a href="#" style="text-decoration: none; color: inherit;">TERMS</a>
+                    <div style="padding: 4px 12px; background: #140805; border: 1px solid rgba(93, 46, 30, 0.3); border-radius: 4px; display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 8px; height: 8px; background: #d4af37; border-radius: 50%;"></span>
+                        <span style="color: #a68b7c;">System: Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="video-modal" id="videoModal" onclick="closeVideo()">
+        <div class="video-container">
+            <video id="myTrailer" controls width="100%" height="100%" style="object-fit: contain; background: #000;">
+                <source src="video/trailer.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video này.
+            </video>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

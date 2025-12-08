@@ -1,0 +1,329 @@
+/* =========================================
+           1. CẤU HÌNH CHUNG & MÀU SẮC
+           ========================================= */
+        :root {
+            --primary: #58249c;       /* Tím */
+            --accent: #F7C04A;        /* Vàng */
+            --highlight-red: #e73626; /* Đỏ */
+            --bg-dark: #0f0518;       /* Nền tối chủ đạo */
+            --text-color: #e0e0e0;
+            --char-bg-dark: #0a0a0a;  /* Nền tối cho phần nhân vật */
+
+            /* Màu Hệ Nhân Vật */
+            --color-light: #FFD700;
+            --color-fire: #FF4500;
+            --color-wood: #00FF7F;
+            --color-dark: #9D00FF;
+            --color-blue-sketch: #2a5298;
+            --color-teal-badge: #4DB6AC;
+
+            /* Footer Colors */
+            --footer-bg: #140805;
+            --footer-text: #a68b7c;
+            --footer-gold: #d4af37;
+            --footer-red: #c2412d;
+            --footer-border: #5d2e1e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; text-transform: uppercase; }
+
+        /* =========================================
+           2. HEADER
+           ========================================= */
+        header { background: #2E0249; padding: 15px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header-wrap { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 45px; width: auto; }
+        .nav-menu { list-style: none; display: flex; gap: 30px; }
+        .nav-menu a { text-decoration: none; color: #ccc; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        .nav-menu a.active { color: var(--accent); }
+        .nav-menu a:hover { color: #fff; }
+        .btn-dl { background: var(--accent); color: #2e0249; padding: 8px 25px; border-radius: 20px; text-decoration: none; font-weight: 800; transition: transform 0.2s; }
+        .btn-dl:hover { transform: scale(1.05); background: #fff; }
+
+        /* =========================================
+           3. HERO & CỐT TRUYỆN
+           ========================================= */
+        .hero-story-section {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(15, 5, 24, 1)), url('character/oc.gif') center/cover;
+            padding: 120px 0 100px; text-align: center; position: relative;
+        }
+        .hero-title { 
+            font-size: 4.5rem; color: #fff; text-shadow: 0 0 30px var(--primary); 
+            margin-bottom: 60px; line-height: 1.1;
+        }
+
+        .story-box {
+            max-width: 800px; margin: 0 auto; 
+            background: rgba(0, 0, 0, 0.7); padding: 40px;
+            border-radius: 15px; border: 1px solid rgba(247, 192, 74, 0.3); 
+            backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .story-box h3 { 
+            color: var(--accent); font-size: 2rem; margin-bottom: 20px; 
+            border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 10px; 
+        }
+        .story-box p { margin-bottom: 20px; color: #ddd; text-align: justify; font-size: 1rem; line-height: 1.8; }
+        .btn-trailer {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 10px;
+            color: #fff; background: linear-gradient(45deg, var(--primary), #7b2cbf); padding: 12px 35px; border-radius: 30px;
+            text-decoration: none; font-weight: bold; cursor: pointer; transition: 0.3s; 
+            text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-trailer:hover { background: var(--accent); color: #2e0249; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(247, 192, 74, 0.4); }
+
+        /* =========================================
+           4. GAMEPLAY
+           ========================================= */
+        .gameplay-section {
+            padding: 80px 0; background-color: #1a1025; 
+            border-top: 1px solid rgba(255,255,255,0.05); text-align: center;
+        }
+        .section-header { margin-bottom: 50px; }
+        .section-header h2 { 
+            font-size: 2.5rem; color: #fff; border-bottom: 3px solid var(--accent); 
+            padding-bottom: 15px; display: inline-block; 
+        }
+        .gameplay-desc { max-width: 800px; margin: 0 auto 40px; color: #ccc; font-size: 1.1rem; }
+        .gameplay-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px; }
+        .gp-item { 
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2)); 
+            padding: 30px 20px; border-radius: 12px; text-align: center; 
+            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; display: flex; flex-direction: column; align-items: center;
+        }
+        .gp-item:hover { 
+            transform: translateY(-10px); 
+            background: linear-gradient(145deg, rgba(247, 192, 74, 0.1), rgba(0,0,0,0.3)); 
+            border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .gp-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; display: block; }
+        .gp-item h4 { font-size: 1.1rem; margin: 0 0 10px 0; color: #fff; letter-spacing: 1px; }
+        .gp-item p { font-size: 0.9rem; color: #aaa; margin: 0; font-weight: 400; text-transform: none; line-height: 1.4; }
+
+        /* =========================================
+           5. CHARACTER SHOWCASE (NỀN TỐI)
+           ========================================= */
+        #characters {
+            padding: 0; position: relative;
+            background: var(--char-bg-dark);
+            color: #fff;
+            overflow: hidden;
+            min-height: 750px;
+        }
+
+        /* Nền trang trí */
+        /* [ĐÃ SỬA] Làm nổi bật tam giác trái bằng màu tím và tăng opacity */
+        .decor-left-stripe-bg {
+            position: absolute; top: 0; left: 0; width: 600px; height: 100%; z-index: 1;
+            background: repeating-linear-gradient(135deg, var(--primary), var(--primary) 5px, #3a1a68 5px, #3a1a68 10px);
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+            opacity: 0.8; /* Tăng độ rõ */
+        }
+        .decor-right-solid-bg {
+            position: absolute; bottom: 0; right: 0; width: 350px; height: 350px; z-index: 1;
+            background-color: var(--color-blue-sketch);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            transition: background-color 0.4s ease;
+        }
+
+        /* Badge Góc Trái Trên */
+        .decor-badge-top {
+            position: absolute; top: 50px; left: 0; z-index: 10;
+            background: var(--accent); color: #000;
+            padding: 30px 80px 50px 40px;
+            border-radius: 0 0 100px 0;
+            box-shadow: 5px 5px 30px rgba(0,0,0,0.6);
+            transition: background-color 0.4s ease;
+            transform: none;
+        }
+        .decor-badge-content { text-align: left; }
+        .decor-title { font-weight: 900; text-transform: uppercase; font-size: 1.2rem; line-height: 1.2; display: block; opacity: 0.9; letter-spacing: 1px; }
+        .decor-subtitle { font-weight: 800; font-size: 1rem; opacity: 0.7; display: block; margin-bottom: 5px; }
+        .decor-number { font-family: 'Teko', sans-serif; font-size: 7rem; line-height: 0.8; font-weight: bold; display: block; color: #000; margin-top: 5px; text-shadow: 2px 2px 0 rgba(255,255,255,0.3); }
+
+        #characters .container { display: flex; align-items: center; padding-top: 100px; padding-bottom: 50px; position: relative; z-index: 5; }
+
+        /* Cột Ảnh */
+        .char-display {
+            flex: 1.2; text-align: center; position: relative; height: 600px; display: flex; align-items: flex-end; justify-content: center;
+        }
+        .big-img {
+            height: 110%; width: auto; max-width: 100%; object-fit: contain; object-position: center bottom;
+            filter: drop-shadow(0 0 30px rgba(255,255,255,0.1));
+            animation: slideInLeft 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        @keyframes slideInLeft { from { opacity: 0; transform: translateX(-80px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* Cột Thông Tin */
+        .char-details { 
+            flex: 1; padding-left: 50px; padding-right: 120px;
+            color: #fff;
+            display: flex; flex-direction: column; justify-content: center; height: 600px;
+        }
+        .char-name { 
+            font-size: 4rem; margin: 0; line-height: 1; color: #fff;
+            text-transform: uppercase; font-weight: 900; letter-spacing: 2px; 
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .char-element-wrap { display: flex; align-items: center; gap: 15px; margin: 20px 0 30px; }
+        
+        .element-badge { 
+            background: #222;
+            color: #fff; padding: 8px 20px; border-radius: 30px; font-weight: 800; text-transform: uppercase; font-size: 0.9rem; 
+            transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .char-quote { 
+            font-style: italic; font-weight: 700; font-size: 1.3rem; margin-bottom: 30px; 
+            color: #ccc;
+            border-left: 5px solid var(--accent); padding-left: 20px; 
+            transition: border-left-color 0.4s ease;
+        }
+        .char-desc { 
+            color: #aaa;
+            font-size: 1rem; margin-bottom: 30px; text-align: justify; line-height: 1.8; 
+        }
+
+        /* Thanh Chọn Dọc */
+        .char-selector { 
+            display: flex; flex-direction: column; gap: 15px; position: absolute; right: 10px; top: 80px; z-index: 10; align-items: center;
+        }
+        .nav-arrow { 
+            width: 40px; height: 40px; cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center; 
+            background: rgba(255,255,255,0.1); border-radius: 50%;
+        }
+        .nav-arrow img { width: 60%; transition: 0.3s; filter: invert(1); }
+        .nav-arrow:hover { background: rgba(255,255,255,0.2); }
+        .nav-arrow:hover img { transform: scale(1.2); }
+        
+        .thumb-btn { 
+            width: 90px; height: 90px; background: #222; border-radius: 12px; cursor: pointer; transition: 0.4s; position: relative; overflow: hidden; 
+            border: 2px solid rgba(255,255,255,0.1);
+            clip-path: none; box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
+        }
+        .thumb-btn img { width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0.6; transition: 0.4s; }
+        
+        .thumb-btn.active, .thumb-btn:hover { 
+            border-color: var(--accent); transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
+        }
+        .thumb-btn.active img, .thumb-btn:hover img { opacity: 1; }
+
+        /* --- FOOTER --- */
+        .footer-new { background-color: var(--footer-bg); color: var(--footer-text); border-top: 1px solid rgba(212, 175, 55, 0.3); position: relative; overflow: hidden; font-family: 'PT Serif', serif; }
+        .footer-dots { position: absolute; inset: 0; opacity: 0.1; pointer-events: none; background-image: radial-gradient(rgba(212, 175, 55, 0.2) 1px, transparent 1px); background-size: 32px 32px; }
+        .footer-glow { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 600px; height: 300px; background: rgba(212, 175, 55, 0.1); filter: blur(120px); border-radius: 50%; pointer-events: none; }
+        .footer-line { position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #27100a, transparent); opacity: 0.8; box-shadow: 0 0 15px rgba(212, 175, 55, 0.8); }
+        .footer-content { position: relative; z-index: 10; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-logo-box { width: 48px; height: 48px; background: #1c0b08; border-radius: 4px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--footer-border); transition: 0.5s; }
+        .group:hover .footer-logo-box { border-color: var(--footer-gold); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+        .footer-logo-text { font-family: 'Rajdhani', sans-serif; font-size: 1.5rem; font-weight: 900; color: #f3f1e6; font-style: italic; letter-spacing: 0.1em; transition: 0.3s; }
+        .group:hover .footer-logo-text { color: var(--footer-gold); }
+        .footer-social-btn { width: 40px; height: 40px; border-radius: 4px; background: #0a0303; border: 1px solid var(--footer-border); display: flex; align-items: center; justify-content: center; color: var(--footer-text); transition: 0.3s; text-decoration: none; }
+        .footer-social-btn:hover { border-color: var(--footer-gold); color: var(--footer-gold); transform: translateY(-3px); }
+        .footer-heading { color: #f3f1e6; font-weight: bold; text-transform: uppercase; margin-bottom: 16px; font-size: 0.875rem; letter-spacing: 0.1em; border-left: 4px solid var(--footer-red); padding-left: 12px; }
+        .footer-link { display: block; color: var(--footer-text); text-decoration: none; font-size: 0.875rem; margin-bottom: 10px; transition: 0.3s; font-weight: 500; }
+        .footer-link:hover { color: var(--footer-gold); padding-left: 8px; }
+        .btn-footer-dl { width: 100%; background: linear-gradient(90deg, #c2412d, #7a2618); color: white; padding: 12px; border-radius: 4px; font-weight: bold; font-size: 0.875rem; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 0 #5d2e1e; transition: 0.3s; text-transform: uppercase; }
+        .btn-footer-dl:hover { background: linear-gradient(90deg, #d4af37, #b8962e); color: #0a0303; }
+        .btn-footer-dl:active { box-shadow: none; transform: translateY(4px); }
+        .footer-bottom { border-top: 1px solid rgba(212, 175, 55, 0.1); background: #0a0000; padding: 24px 20px; margin-top: 0; }
+        .footer-bottom-content { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.75rem; color: #5d2e1e; font-weight: 500; }
+
+        /* --- VIDEO MODAL --- */
+        .video-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 3000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: 0.3s; }
+        .video-modal.active { opacity: 1; visibility: visible; }
+        .video-container { width: 85%; max-width: 900px; aspect-ratio: 16/9; background: #000; position: relative; border: 1px solid #333; }
+        .video-container iframe { width: 100%; height: 100%; }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 900px) {
+        /* 1. Hiện nút Hamburger (quan trọng) */
+        .hamburger { 
+            display: block; 
+            font-size: 1.8rem; 
+            color: #fff; 
+            cursor: pointer; 
+        }
+        
+        /* 2. Ẩn nút download của máy tính */
+        .desktop-dl { display: none; }
+
+        /* 3. Cấu hình Menu xổ xuống */
+        .nav-menu {
+            display: none; /* Mặc định ẩn */
+            flex-direction: column;
+            position: absolute;
+            top: 100%; /* Đẩy xuống ngay dưới header */
+            left: 0;
+            width: 100%;
+            background-color: #2E0249; /* Nền tím đồng bộ header */
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            z-index: 999;
+        }
+
+        /* 4. Khi có class "active" (do JS thêm vào) thì hiện menu ra */
+        .nav-menu.active { 
+            display: flex; 
+        }
+        
+        .nav-menu li { margin: 10px 0; }
+        
+        /* 5. Hiện nút download trong menu mobile */
+        .mobile-dl { 
+            display: block; 
+            margin-top: 10px; 
+        }
+        .mobile-dl .btn-dl { display: inline-block; }
+
+        /* --- CÁC PHẦN KHÁC GIỮ NGUYÊN --- */
+        .hero h1 { font-size: 2.5rem; }
+        .intro-grid { grid-template-columns: 1fr; gap: 30px; }
+        .gameplay-list { grid-template-columns: 1fr 1fr; }
+        
+        #characters .container { flex-direction: column; padding-top: 100px; }
+        .char-details { padding-left: 0; padding-right: 0; text-align: center; height: auto; margin-top: 20px; color: #ccc; }
+        
+        .char-quote { text-align: center; border-left: none; border-top: 4px solid var(--color-light); padding-top: 20px; padding-left: 0; transition: border-top-color 0.3s ease; }
+        
+        .char-selector { position: relative; top: auto; right: auto; flex-direction: row; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+        .nav-arrow { display: none; }
+        .thumb-btn { width: 70px; height: 70px; }
+        .char-display { height: 350px; }
+        .decor-left-stripe-bg { width: 300px; height: 100%; }
+        .decor-right-solid-bg { width: 150px; height: 150px; }
+        
+        .decor-badge-top { width: 220px; padding: 30px 0 0 20px; border-radius: 0 30px 30px 0; }
+        .decor-title { font-size: 0.8rem; }
+        .decor-number { font-size: 3.5rem; }
+        }
+        /* =========================================
+        7. HIỆU ỨNG SCROLL REVEAL (MỚI THÊM)
+        ========================================= */
+        .reveal {
+            position: relative;
+            transform: translateY(100px); /* Dịch xuống 100px */
+            opacity: 0; /* Ẩn đi */
+            transition: all 1s ease; /* Thời gian hiện ra là 1 giây */
+        }
+
+        .reveal.active {
+            transform: translateY(0); /* Trở về vị trí cũ */
+            opacity: 1; /* Hiện rõ */
+        }
+        /* Ẩn nút mobile trên máy tính */
+        .mobile-dl, .hamburger { display: none; }
