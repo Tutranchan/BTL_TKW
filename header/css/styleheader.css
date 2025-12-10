@@ -1,0 +1,358 @@
+body {
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+                                                /* ----- HEADER LAYER COLORS ----- */
+.header-top {
+    background: linear-gradient(90deg, #321415, #2c2456);;
+    display: flex;
+    align-items: center; /* Căn giữa logo theo chiều dọc */
+    padding: 10px 40px;  /* tăng padding cho đủ độ cao */
+    height: 50px;       /* KHÓA chiều cao header để logo không bị lệch */
+    justify-content: space-between;
+}
+.header-bottom {
+    background: #1c1c35;
+    height: 10px;
+}
+
+                                                /* ----- LOGO ZONE ----- */
+.logo-container {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  /*   overflow: hidden; giữ nguyên khi chưa hover */
+    border-radius: 6px;
+    position: relative;
+}
+
+.logo-container:hover {
+    overflow: visible; /* khi hover cho phép tràn ra */
+}
+/* Logo mặc định (các trang khác) */
+.logo {
+    width: 70px;
+    transition: 0.35s ease;
+}
+
+/* Home: logo phóng to */
+.home-mode .logo {
+    transform: scale(1.9);
+    transform-origin: top;
+}
+
+                                                /* ----- MENU ----- */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-left: 25px;
+}
+
+.nav a {
+    color: #00277b;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav a {
+    color: #ffdbc5;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 20px;          /* để có chỗ cho viền */
+    border-radius: 30px;         /* bo góc nhẹ */
+    transition: 0.25s ease;     /* hiệu ứng mượt */
+}
+
+.nav a:hover {
+    color: #6f0404;
+    background: rgb(255, 255, 255, 1); /* từ 0.15 → 0.25 đậm hơn */
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left:auto;
+    margin-right: 1px; /* đẩy sát Download */
+}
+
+.icon-btn {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.25s ease;
+}
+
+.icon-btn img {
+    width: 30px;
+}
+
+.icon-btn:hover {
+    transform: scale(1.15);
+}
+
+                                            /* ----- MORE DROPDOWN ----- */
+.more {
+    position: relative;
+    color: #ffdbc5;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.more-btn:hover {
+    color: #fff;
+}
+
+.dropdown {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background: #1A1A1A;
+    padding: 10px 0;
+    border-radius: 4px;
+    width: 160px;
+    display: none;
+}
+
+.dropdown a {
+    display: block;
+    padding: 8px 15px;
+    color: #ddd;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background: #333;
+    color: #fff;
+
+}
+
+                                            /* ----- DOWNLOAD BUTTON ----- */
+.download-btn {
+    background: #751b00;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 24px;
+    color: #e3c6bd;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.download-btn:hover {
+    filter: brightness(1.12);
+}
+/* ---MORE---  */
+.more-btn {
+  color: #ffdbc5;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 30px;
+    transition: 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* sửa lỗi gõ nhầm 3x */
+}
+.more-btn:hover {
+    color: #6f0404;
+    background:  rgb(255, 255, 255, 1);
+    top:100%;
+}
+.arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.more-btn.active .arrow {
+    transform: rotate(180deg);
+}
+/* ----HIEU UNG PAGE---- */
+.nav a.active-page {
+    color: #6f0404;
+    background: rgb(255, 255, 255, 1);
+    transform: scale(1.1);
+    border-radius: 25px;
+}
+/*   ---AUDIO---   */
+.sound-img {
+    transition: 0.3s ease;
+}
+
+.sound-on {
+    filter: drop-shadow(0 0 6px #ff3131);
+    transform: scale(1.2);
+}
+
+.icon-btn:active .sound-img {
+    transform: scale(0.9);
+}
+
+/* Bao bọc Link Icon và Dropdown */
+.social-links {
+    position: relative; /* Quan trọng để định vị dropdown */
+    height: 100%; /* Giữ chiều cao để mouseleave hoạt động tốt */
+}
+
+
+
+/* Dropdown chứa các Social Links */
+.link-dropdown {
+    position: absolute;
+    top: 100%; /* Đặt dưới nút Link */
+    right: 0; /* Căn lề phải của dropdown */
+    background-color: #ffffff; /* Màu nền của dropdown */
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 1000;
+    display: none; 
+    flex-direction: column; /* Hiển thị các icon theo chiều dọc */
+    gap: 8px; /* Khoảng cách giữa các icon */
+}
+
+.link-dropdown a {
+    display: block;
+    padding: 5px;
+    transition: background-color 0.2s;
+}
+
+.link-dropdown a:hover {
+    background-color: #ffffff;
+    border-radius: 100%;
+}
+
+.link-dropdown img {
+    display: block;
+}
+
+.link-dropdown a {
+    /* Đảm bảo transition áp dụng cho cả box-shadow và transform */
+    transition: background-color 0.2s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    border-radius: 4px;
+    display: flex; /* Đảm bảo link là block/flex để áp dụng padding/shadow tốt */
+}
+
+.link-dropdown a:hover {
+    background-color: #ffffff; 
+    
+    /* Hiệu ứng phát sáng */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+                0 0 10px rgba(0, 191, 255, 0.5); 
+                
+    /* Phóng to nhẹ icon */
+    transform: scale(1.1);
+}
+
+
+
+                            /* ----DROPDOWN CỦA LOGIN---- */
+/* Container bọc nút và dropdown */
+.user-status-container {
+    position: relative; /* Quan trọng cho dropdown absolute */
+    height: 100%;
+}
+
+/* Menu Dropdown */
+.user-dropdown {
+    position: absolute;
+    top: 100%; /* Đặt dưới nút */
+    right: 0; 
+    background-color: #ffffff; /* Màu nền tối */
+    border-radius: 4px;
+    padding: 8px;
+    min-width: 150px;
+    z-index: 1000;
+    display: none; /* Mặc định ẩn */
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Style cho các link bên trong */
+.user-dropdown a {
+    color: rgb(116, 6, 6);
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-radius: 3px;
+    white-space: nowrap; /* Ngăn chữ bị xuống dòng */
+}
+
+.user-dropdown a:hover {
+    background-color: #ffffff;
+    /* Áp dụng hiệu ứng phát sáng bạn đã thêm */
+    box-shadow: 0 0 5px rgba(103, 128, 255, 0.5);
+}
+
+/* Class để ẩn/hiện bằng JavaScript */
+.hidden-item {
+    display: none !important;
+}
+/*=============================*/
+ .hidden-item {
+    display: none !important;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* ================================================= */
+/* 1. HIỆU ỨNG VÀ BỐ CỤC CHUNG CHO MOBILE (DƯỚI 1024px) */
+/* ================================================= */
+
+@media (max-width: 1024px) {
+    /* Ẩn thanh menu chính và thanh nav-right trên desktop */
+    .nav, .nav-right {
+        display: none !important;
+    }
+
+    /* Hiển thị nút menu hamburger */
+    .header-top {
+        padding: 10px 20px;
+        justify-content: space-between; /* Đẩy logo và menu-button ra hai bên */
+    }
+
+    /* Thêm nút Hamburger cho Mobile (cần thêm vào HTML) */
+    .menu-toggle {
+        display: block; /* Hiện thị nút Hamburger */
+        cursor: pointer;
+        font-size: 30px;
+        color: #fff;
+    }
+    
+    /* Điều chỉnh logo */
+    .logo-container {
+        margin-left: 0;
+    }
+}
+

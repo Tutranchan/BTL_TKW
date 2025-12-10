@@ -1,5 +1,3 @@
-// terms.js
-
 document.addEventListener('DOMContentLoaded', () => {
     //TORCH EFFECT: Đèn pin theo chuột
     const torch = document.getElementById('torch-overlay');

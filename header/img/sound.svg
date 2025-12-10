@@ -1,0 +1,14 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Vòng tròn ngoài -->
+  <circle cx="50" cy="50" r="46" stroke="#888" stroke-width="3" fill="none"/>
+
+  <!-- Vòng tròn trong -->
+  <circle cx="50" cy="50" r="40" stroke="#aaa" stroke-width="3" fill="#ddd"/>
+
+  <!-- Icon loa -->
+  <path d="M40 38 L30 38 L30 62 L40 62 L55 75 L55 25 L40 38 Z" fill="#888"/>
+
+  <!-- Sóng âm -->
+  <path d="M60 40 Q68 50 60 60" stroke="#888" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M65 35 Q78 50 65 65" stroke="#888" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

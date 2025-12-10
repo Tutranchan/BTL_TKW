@@ -1,0 +1,13 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Vòng tròn ngoài -->
+  <circle cx="50" cy="50" r="46" stroke="#888" stroke-width="3" fill="none"/>
+
+  <!-- Vòng tròn trong -->
+  <circle cx="50" cy="50" r="40" stroke="#aaa" stroke-width="3" fill="#e5e5e5"/>
+
+  <!-- Icon loa (dịch sang phải ~4px) -->
+  <path d="M44 38 L34 38 L34 62 L44 62 L59 75 L59 25 L44 38 Z" fill="#888"/>
+
+  <!-- Gạch chéo (giữ nguyên vị trí và màu loa) -->
+  <line x1="28" y1="30" x2="72" y2="70" stroke="#888" stroke-width="6" stroke-linecap="round"/>
+</svg>
