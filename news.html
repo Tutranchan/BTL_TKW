@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Info</title>
+
+    <link rel="stylesheet" href="news.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>𝙉𝙀𝙒 & 𝙄𝙉𝙁𝙊</h1>
+    </div>
+
+    <!-- SLIDER -->
+    <section class="top-slider">
+        <div class="slider-wrapper" id="sliderWrapper">
+            <!-- 8 ảnh -->
+        </div>
+
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab active" data-tab="latest">Latest</button>
+        <button class="tab" data-tab="news">News</button>
+        <button class="tab" data-tab="notice">Notice</button>
+        <button class="tab" data-tab="event">Event</button>
+        <button class="tab" data-tab="update">Update</button>
+    </div>
+
+    <!-- NEWS LIST -->
+    <div id="newsList" class="news-list"></div>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+        <button class="page-btn left">⟨</button>
+        <div class="page-dots"></div>
+        <button class="page-btn right">⟩</button>
+    </div>
+
+    <script src="news.js"></script>
+
+</body>
+</html>
