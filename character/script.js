@@ -1,22 +1,22 @@
 // DỮ LIỆU NHÂN VẬT
         const characters = [
             { 
-                id: "01", name: "Alius", role: "Quang thức", image: "character/alius.png", color: "#FFD700",
+                id: "01", name: "Alius", role: "Quang thức", image: "character/alius.png", color: "#d1a100ff",
                 quote: "Tôi không biết? Tôi không nhớ? Tôi không hiểu? Tôi là ai?",
                 fullDesc: "Sở hữu sức mạnh của Ánh sáng và Trí thức. Alius luôn tìm kiếm câu trả lời cho nguồn gốc của mình giữa thế giới hỗn mang."
             },
             { 
-                id: "02", name: "Salvat", role: "Hỏa", image: "character/Salvat.png", color: "#FF4500",
+                id: "02", name: "Salvat", role: "Hỏa", image: "character/Salvat.png", color: "#aa3004ff",
                 quote: "Tôi chỉ muốn bảo vệ những người thân yêu của mình thôi! Không thể để mất ai lần nào nữa, không thể để sai lầm đó xảy ra lại lần nữa",
                 fullDesc: "Không thể để mất ai lần nào nữa. Ngọn lửa của Salvat là lá chắn vững chắc nhất để bảo vệ đồng đội khỏi mọi hiểm nguy."
             },
             { 
-                id: "03", name: "Vivian", role: "Mộc", image: "character/Vivian.png", color: "#00FF7F",
+                id: "03", name: "Vivian", role: "Mộc", image: "character/Vivian.png", color: "#07944dff",
                 quote: "Thời trang không hề có giới tính cưng à, chính con người đã áp đặt định kiến giới lên nó đấy. Tại sao ư? Vì họ thích như vậy. Hahaha",
                 fullDesc: "Tự do và phóng khoáng như thiên nhiên. Vivian sử dụng sức mạnh của Mộc để trói buộc kẻ thù và chữa lành vết thương."
             },
             { 
-                id: "04", name: "Carceus", role: "Ám", image: "character/carceus.png", color: "#9D00FF",
+                id: "04", name: "Carceus", role: "Ám", image: "character/carceus.png", color: "#58048dff",
                 quote: "Cuộc sống là vô vàn cơ hội, vô vàn khả năng, chính vì vậy mà cuộc sống mới thú vị đấy, cậu có biết không?",
                 fullDesc: "Bóng tối không phải là điều xấu xa, nó là nơi ẩn chứa những khả năng vô tận mà Carceus luôn khao khát khám phá."
             }
