@@ -125,10 +125,8 @@
 
         renderThumbs();
         selectCharacter(currentIndex);
-        // =========================================
+        
         // HIỆU ỨNG SCROLL REVEAL
-        // =========================================
-
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
 
